@@ -5,20 +5,11 @@ console.log("Number of Categories",count)
 
 
 
-const category1=document.querySelector('.item h2').firstChild
-console.log("Category:",category1.textContent)
-
-const li1=document.querySelector('.item ul')
-const count2 = li1.children.length
-console.log("Elements:",count2)
-const count3=0
-const categories2=document.querySelector('ul#categories')
-categories2.children.forEach((category) => {
-    const text= category.document.querySelector('.item h2')
-    console.log(text.textContent)
+[...categories.children].forEach((category) => {
+    console.log(category.firstElementChild.textContent)
+    console.log(category.lastElementChild.children.length)
    
-    count3+=category.length
-    console.log(count3) 
+     
     });
 
 
