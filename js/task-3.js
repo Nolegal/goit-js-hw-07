@@ -1,12 +1,12 @@
-fieldEl=document.querySelector('#name-input');
-span=document.querySelector('#name-output');
+const fieldEl=document.querySelector('#name-input');
+const span=document.querySelector('#name-output');
 //fieldEl.trim()
 fieldEl.addEventListener('input', ()=>{
+ const inputValue=fieldEl.value.trim()
+span.innerHTML=inputValue
 
-span.innerHTML=fieldEl.value.trim()
-
-if(fieldEl===""){
-  return span.innerHTML="Anonymous"
+if(inputValue===""){
+   span.innerHTML="Anonymous"
 }
 
 });
