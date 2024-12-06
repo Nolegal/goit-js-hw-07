@@ -8,9 +8,11 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
-
+const deleteBox=()=>{
+   boxes.innerHTML=''
+}
 const createBoxes=(amount)=>{
-  boxes.innerHTML=''
+  deleteBox();
   let step=30;
   const elements=[];
   for (let i = 0; i < amount; i++) {
@@ -32,13 +34,16 @@ const createBoxes=(amount)=>{
 createBox.addEventListener("click", ()=>{
 
   const inputValue=Number(amount.value.trim());
-  createBoxes(inputValue);
+  if(inputValue>=1 && inputValue<=100){
+    createBoxes(inputValue);
+  }
+  
   
 }
   )
 
 destroyBox.addEventListener("click",()=>{
-  boxes.innerHTML=''
+  deleteBox();
 });
 
 
